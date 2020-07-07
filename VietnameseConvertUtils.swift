@@ -393,7 +393,15 @@ class ConvertHelper {
             number /= 1000
         } while number > 0
         
-        return (prefix + current).trimmingCharacters(in: .whitespacesAndNewlines)
+        var retVal = (prefix + current).trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if let start = retVal.first {
+            retVal.removeFirst()
+            retVal = start.uppercased() + retVal
+        }
+        
+        retVal += " Vietnam Dong"
+        return retVal
     }
     
     //MARK: - Remove accent
