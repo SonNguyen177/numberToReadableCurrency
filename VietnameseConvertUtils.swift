@@ -22,10 +22,11 @@ class ConvertHelper {
         var mod3 = 0
         // Loại bỏ dấu phân cách nhóm
         strNumber = pStrNumeric.replacingOccurrences(of: ",", with: "")
-        strNumber = pStrNumeric.replacingOccurrences(of: ".", with: "")
-        
+        strNumber = strNumber.replacingOccurrences(of: ".", with: "")
+    
+        print(strNumber)
         // Loại bỏ số 0 đứng đầu
-        let arr = Array(pStrNumeric)
+        let arr = Array(strNumber)
         for i in 0..<arr.count {
             if (arr[i] == "0")
             {
